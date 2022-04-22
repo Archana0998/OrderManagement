@@ -34,11 +34,11 @@ public interface IProductDetailController {
 	@PostMapping("/Count")
 	public List<Product>getAllList();
 
-	
 	@PutMapping("/update")
 	Product update(Product product);
 	
-	
+	@GetMapping("/getById{id}")
+	public Product getById(@PathVariable int id);
 	
 
 }

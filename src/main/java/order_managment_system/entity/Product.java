@@ -1,12 +1,10 @@
 package order_managment_system.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,7 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "product_details")
 //@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-public class Product  {
+public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,8 +45,6 @@ public class Product  {
 	@JoinColumn(name = "category_id_fk")
 	private Category category;
 
-	
-	
 	public Integer getId() {
 		return id;
 	}
@@ -113,32 +109,10 @@ public class Product  {
 		this.category = category;
 	}
 
-	public Product() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Product(Integer id, String productName, String catagory, Date mfgDate, Date expDate, Integer price,
-			Integer quantity, Boolean status, Category category) {
-		super();
-		this.id = id;
-		this.productName = productName;
-		this.category = category;
-		this.mfgDate = mfgDate;
-		this.expDate = expDate;
-		this.price = price;
-		this.quantity = quantity;
-		this.status = status;
-	}
-
 	@Override
 	public String toString() {
-		return "Product_details [id=" + id + ", productName=" + productName + ", catagory=" + category + ", mfgDate="
-				+ mfgDate + ", expDate=" + expDate + ", price=" + price + ", quantity=" + quantity + ", status="
-				+ status + "]";
+		return "Product [id=" + id + ", productName=" + productName + ", mfgDate=" + mfgDate + ", expDate=" + expDate
+				+ ", price=" + price + ", quantity=" + quantity + ", status=" + status + ", category=" + category + "]";
 	}
-
-	
-	
 
 }

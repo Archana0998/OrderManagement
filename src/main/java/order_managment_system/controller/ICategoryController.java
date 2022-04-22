@@ -29,6 +29,4 @@ public interface ICategoryController
 			public List<Category> getAllCategories();
 			
 			
-			
-
 }

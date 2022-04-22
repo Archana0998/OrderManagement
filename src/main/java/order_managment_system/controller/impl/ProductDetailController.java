@@ -61,8 +61,12 @@ public class ProductDetailController implements IProductDetailController {
 	}
 
 	@Override
-	public Product getByName(String prodName) {
-		return productservice.getByName(prodName);
+	public Product getByName(String prodName) 
+	{    return productservice.getByName(prodName);
+	}
+     
+	public Product getById(@RequestBody int id) {
+		return productservice.getById(id);
 	}
 
 	@Override
@@ -71,4 +75,6 @@ public class ProductDetailController implements IProductDetailController {
 		return null;
 	}
 
-}
+		
+	}
+

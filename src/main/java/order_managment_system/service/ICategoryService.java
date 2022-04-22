@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import order_managment_system.entity.Category;
 
-@Service
+
 public interface ICategoryService {
 
 	public Category update(Category category);

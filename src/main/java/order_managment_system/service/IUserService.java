@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import order_managment_system.entity.User;
 
 
-@Service
+
 public interface IUserService {
 
 	public User getAdminById(int id);
@@ -19,11 +19,7 @@ public interface IUserService {
 
     public List<User> getAll();
     
-   
-    
-    
-
-	public User loginUser(String email, String password);
+    public User loginUser(String email, String password);
 
 
 }

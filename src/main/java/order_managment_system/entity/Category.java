@@ -1,6 +1,5 @@
 package order_managment_system.entity;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -22,16 +21,16 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int Id;
 
-	@Column(name = "cat_name")
+	@Column(name = "catname")
 	private String catName;
 	
+	private int count;
 	
 	
 	@OneToMany(mappedBy="category", fetch = FetchType.EAGER)
 	@JsonIgnore
 	private List<Product> products;
 
-	
 	public int getId() {
 		return Id;
 	}
@@ -70,6 +69,14 @@ public class Category {
 	@Override
 	public String toString() {
 		return "Category [Id=" + Id + ", catName=" + catName + "]";
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 
 }

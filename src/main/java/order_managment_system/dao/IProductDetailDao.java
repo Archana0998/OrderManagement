@@ -16,6 +16,10 @@ public interface IProductDetailDao extends CrudRepository<Product, Integer> {
 	
 	public Product findByProductName(String prodName);
 
+	//public Product findByName(String product);
+
+	public Product getById(int id);
+
 	
 	
 //	public Product save(Product product, int id);
