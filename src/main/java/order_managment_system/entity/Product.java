@@ -27,10 +27,10 @@ public class Product {
 	private String productName;
 
 	@Column(name = "mfgDate")
-	private Date mfgDate;
+	private String mfgDate;
 
 	@Column(name = "expDate")
-	private Date expDate;
+	private String expDate;
 
 	@Column(name = "price")
 	private int price;
@@ -41,7 +41,7 @@ public class Product {
 	@Column(name = "status")
 	private Boolean status;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne()
 	@JoinColumn(name = "category_id_fk")
 	private Category category;
 
@@ -61,19 +61,19 @@ public class Product {
 		this.productName = productName;
 	}
 
-	public Date getMfgDate() {
+	public String getMfgDate() {
 		return mfgDate;
 	}
 
-	public void setMfgDate(Date mfgDate) {
+	public void setMfgDate(String mfgDate) {
 		this.mfgDate = mfgDate;
 	}
 
-	public Date getExpDate() {
+	public String getExpDate() {
 		return expDate;
 	}
 
-	public void setExpDate(Date expDate) {
+	public void setExpDate(String expDate) {
 		this.expDate = expDate;
 	}
 
@@ -109,6 +109,27 @@ public class Product {
 		this.category = category;
 	}
 
+<<<<<<< HEAD
+=======
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Product(Integer id, String productName, String catagory, String mfgDate, String expDate, Integer price,
+			Integer quantity, Boolean status, Category category) {
+		super();
+		this.id = id;
+		this.productName = productName;
+		this.category = category;
+		this.mfgDate = mfgDate;
+		this.expDate = expDate;
+		this.price = price;
+		this.quantity = quantity;
+		this.status = status;
+	}
+
+>>>>>>> 65b1e927b26025870fd3342e269ca1ed208d6be8
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", productName=" + productName + ", mfgDate=" + mfgDate + ", expDate=" + expDate
