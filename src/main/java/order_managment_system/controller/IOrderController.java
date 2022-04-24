@@ -21,7 +21,4 @@ public interface IOrderController {
 	@GetMapping("/getAll")
 	List<Order> getAllOrder();
 
-	@PostMapping("/getSoldProducts")
-	public List<Map<String, Object>> getSoldProducts() throws Exception;
-
 }

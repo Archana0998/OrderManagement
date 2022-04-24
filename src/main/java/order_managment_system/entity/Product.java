@@ -108,12 +108,9 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-
-<<<<<<< HEAD
-=======
 	public Product() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Product(Integer id, String productName, String catagory, String mfgDate, String expDate, Integer price,
@@ -129,7 +126,6 @@ public class Product {
 		this.status = status;
 	}
 
->>>>>>> 65b1e927b26025870fd3342e269ca1ed208d6be8
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", productName=" + productName + ", mfgDate=" + mfgDate + ", expDate=" + expDate

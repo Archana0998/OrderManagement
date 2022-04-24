@@ -17,8 +17,6 @@ import order_managment_system.entity.Product;
 @Repository
 public interface IOrderDao extends CrudRepository<Order, Integer> {
 
-	Order save(Product dtoToEntity);
-
 	
 //     @Query(value = "select product_name,id, sum(quantity) from  product_details group by category_id_fk")
 //	 public List<Object[]> findSoldProducts();

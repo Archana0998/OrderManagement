@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
-import orderDTO.OrderDTO;
 import order_managment_system.dao.ICategoryDao;
 import order_managment_system.dao.IProductDetailDao;
 import order_managment_system.entity.Category;
@@ -25,9 +24,7 @@ import order_managment_system.service.IProductDetailService;
 @Service
 public class ProductDetailService implements IProductDetailService {
 
-//    @Autowired
-//	private OrderDTO orderDTO;
-	
+
 	@Autowired
 	private IProductDetailDao productDetailDao;
 

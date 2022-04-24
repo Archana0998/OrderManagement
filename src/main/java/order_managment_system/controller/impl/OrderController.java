@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import orderDTO.OrderDTO;
 import order_managment_system.controller.IOrderController;
 import order_managment_system.entity.Order;
 import order_managment_system.entity.Product;
@@ -41,8 +40,5 @@ public class OrderController implements IOrderController {
 		return orderService.getAllOrder();
 	}
 	
-	public List<Map<String, Object>> getSoldProducts() throws Exception{
-		return orderService.getSoldProducts();
-	}
 	
 }
