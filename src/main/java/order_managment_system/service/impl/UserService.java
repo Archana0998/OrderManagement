@@ -62,19 +62,6 @@ public class UserService implements IUserService{
 	}
 	
 	
-//	@Override
-//	 public Boolean logInCheck(Integer id, String pass) {
-//		 
-//		User user=userDao.getUserByIdAndPassword(id, pass);
-//		
-//		if(user !=null) {
-//			return true;
-//		}
-//		
-//		return false;
-//	 }
-	
-	
 	
 	
 }

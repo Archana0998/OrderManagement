@@ -67,15 +67,21 @@ public class ProductDetailService implements IProductDetailService {
 	
 	@Override
 	public void save(Product product) {
-		// TODO Auto-generated method stub
-		
+				
 	}
 
 
 	@Override
 	public Product update(Product product) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		if(product.getQuantity()==0)
+		{
+			product.setStatus("Not Available");
+		}
+		else
+		{
+			product.setStatus("Available");
+		}
+		return productDetailDao.save(product);
 	}
 
 

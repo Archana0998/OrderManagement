@@ -19,9 +19,6 @@ public interface IProductDetailController {
 	@PostMapping("/add")
 	public Product add(Product product);
 
-//	@PutMapping("/update/{id}")
-//	public Product update(Product product@PathVariable int id);
-
 	@DeleteMapping("/delete/{id}")
 	public String deletebyid(@PathVariable int id);
 

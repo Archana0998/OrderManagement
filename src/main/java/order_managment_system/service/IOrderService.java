@@ -6,9 +6,8 @@ public interface IOrderService {
 	
 
 	
-	public Order addOrder(Order order);
-
-		
+	public Order addOrder(Order order) throws Exception;
+   
 	Order updateOrder(Order order);
 
 	Order deleteOrder(Order order);

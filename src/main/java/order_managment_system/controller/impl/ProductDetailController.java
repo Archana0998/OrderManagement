@@ -24,9 +24,9 @@ public class ProductDetailController implements IProductDetailController {
 	public Product add(@RequestBody Product product) {
 
 		if(product.getQuantity()>0)
-			product.setStatus(true);
+			product.setStatus("Available");
 		else
-			product.setStatus(false);
+			product.setStatus("Not Available");
 		return productservice.add(product);
 
 		

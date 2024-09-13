@@ -60,7 +60,6 @@ public class CategoryController implements ICategoryController{
 
 	@Override
 	public List<Category> getAllCategories() {
-		// TODO Auto-generated method stub
 		return categoryService.getAllCategories();
 	}
 

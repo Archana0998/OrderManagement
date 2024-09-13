@@ -1,17 +1,11 @@
 package order_managment_system.entity;
 
 import java.io.Serializable;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column; 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -38,17 +32,11 @@ import javax.validation.constraints.Size;
 		 private String email;
 		 
 		@Column(name="phone")
-		//@Pattern(regexp="(^\\\\d{10}$)")
-		//@NotBlank(message ="name not Empty")
 		private long phone;
 		 
 		 @Column(name="password")
-		// @Pattern(regexp = "^[a-zA-Z0-9]{4}", message="Length Must be 4")
 		 private String password;
-		 
-		 @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-		 private Order order;
-			
+				
 		
 		 
 		 public User(int id, String name, String email, long phone, String password) {

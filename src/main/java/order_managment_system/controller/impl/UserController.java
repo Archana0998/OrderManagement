@@ -19,7 +19,7 @@ public class UserController implements IUserController {
 
 	@Override
 	public User add(@RequestBody User user) {
-				return userService.add(user);
+	  return userService.add(user);
 
 	}
 
@@ -30,7 +30,6 @@ public class UserController implements IUserController {
 	
 
 	public User update(User admin) {
-		// TODO Auto-generated method stub
 		return userService.update(admin);
 
 	}

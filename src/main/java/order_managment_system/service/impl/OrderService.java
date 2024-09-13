@@ -1,12 +1,16 @@
 package order_managment_system.service.impl;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import order_managment_system.dao.IOrderDao;
 import order_managment_system.dao.IUserDao;
 import order_managment_system.entity.Order;
 import order_managment_system.entity.Product;
+import order_managment_system.entity.User;
 import order_managment_system.service.IOrderService;
 import order_managment_system.service.IProductDetailService;
 
@@ -26,16 +30,14 @@ public class OrderService implements IOrderService {
 	public List<Order> getAllOrder() {
 		return (List<Order>) orderDao.findAll();
 
-	
-			}
+	}
 
 	@Override
-	public Order addOrder(Order order) {
-
+	public Order addOrder(Order order) throws Exception {
+        
 		try {
-			order.getProduct().getId();
+			System.out.println("new order  : " + order);
 			Product existingProduct = productservice.getById(order.getProduct().getId());
-
 			System.out.println("product : " + existingProduct);
 
 			if (existingProduct == null) {
@@ -43,22 +45,34 @@ public class OrderService implements IOrderService {
 			}
 
 			if (existingProduct.getQuantity() < order.getQuantity()) {
-				throw new Exception("Order quantity is greather than availability");
+				
+				throw new Exception("product Quentity is grater then you inter");
 			} else {
 				existingProduct.setQuantity(existingProduct.getQuantity() - order.getQuantity());
+
 				if (existingProduct.getQuantity() == 0) {
-					existingProduct.setStatus(false);// product not available
+					existingProduct.setStatus("Not Available");// product not available
 				} else {
-					existingProduct.setStatus(true);// product available
+					existingProduct.setStatus("Available");// product available
 				}
+				
+				System.out.println("FINAL PRODUCT : "+ existingProduct);
 				productservice.save(existingProduct);
 
-				order.setUser(userDao.findById(1).get());
+				Optional<User> findById = userDao.findById(1);
+				
+				if(findById.isPresent()) {
+					order.setUser(findById.get());
+					
+					System.out.println("USER FOUND : "+findById.get());
+					
+				}
 
 				order.setProduct(existingProduct);
 
 				order.setTotalPrice(order.getQuantity() * existingProduct.getPrice());
 
+				System.out.println("FINAL ORDER : "+order );
 				orderDao.save(order);
 			}
 		} catch (Exception e) {
@@ -68,7 +82,6 @@ public class OrderService implements IOrderService {
 		return (Order) orderDao.save(order);
 	}
 
-	
 	@Override
 	public Order deleteOrder(Order order) {
 		System.out.println("service ...");
@@ -87,9 +100,4 @@ public class OrderService implements IOrderService {
 		return null;
 	}
 
-
-
-	
-
-	
 }

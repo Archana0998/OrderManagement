@@ -16,7 +16,7 @@ public interface IOrderController {
 	public Order getById(int id);
 
 	@PostMapping("/add")
-	public Order addOrder(Order order);
+	public Order addOrder(Order order) throws Exception;
 
 	@GetMapping("/getAll")
 	List<Order> getAllOrder();

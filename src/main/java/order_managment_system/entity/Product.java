@@ -1,8 +1,5 @@
 package order_managment_system.entity;
 
-import java.util.Date;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,11 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "product_details")
-//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Product {
 
 	@Id
@@ -39,7 +34,7 @@ public class Product {
 	private int quantity;
 
 	@Column(name = "status")
-	private Boolean status;
+	private String status;
 
 	@ManyToOne()
 	@JoinColumn(name = "category_id_fk")
@@ -93,11 +88,11 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public Boolean getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(Boolean status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
@@ -114,7 +109,7 @@ public class Product {
 	}
 
 	public Product(Integer id, String productName, String catagory, String mfgDate, String expDate, Integer price,
-			Integer quantity, Boolean status, Category category) {
+			Integer quantity, String status, Category category) {
 		super();
 		this.id = id;
 		this.productName = productName;
